@@ -1,0 +1,151 @@
+  .main {
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+
+  .mat-toolbar {
+    margin: 8px;
+    padding: 8px;
+    background: whitesmoke;
+    color:#175977;
+    font-family: Verdana;
+    font-weight: bold;
+    border-radius: 8px;
+    
+  }
+
+  .item {
+    display: flex; 
+    flex-direction:row;
+  }
+
+  .sub-item {
+    display: flex; 
+    flex-direction:row;
+    align-items: center;
+  }
+
+  .mat-toolbar-row {
+    margin: 8px;
+    padding: 8px;
+    background: whitesmoke;
+    color:#175977;
+    font-family: Verdana;
+    font-weight: bold;
+    border-radius: 8px;
+    display: flex; 
+    justify-content:space-between;
+    
+  }
+
+  .sidenav-container {
+    border-radius: 8px;
+    margin: 8px;
+    padding: 8px;
+    height: 92%;
+    position: relative;
+    background: whitesmoke;
+  }
+  
+  .sidenav-content {
+    margin: 8px;
+    padding: 8px;
+    background: whitesmoke;
+    color:#175977;
+    text-align: center;
+    font-family: Verdana;
+    font-size: medium;
+    border-radius: 8px;
+    min-height: 400px;
+  }
+  
+  .sidenav {
+    margin: 8px;
+    padding: 8px;
+    background: whitesmoke;
+    color:#175977;
+    text-align: center;
+    font-family: Verdana;
+    font-size: medium;
+    border-radius: 8px;
+  }
+  
+  
+  .text-discamer {
+    color: black;
+    font-family: Verdana;
+    font-weight: normal;
+    font-size: xx-small;
+    line-height: 1.2;
+}
+  
+  .is-active {
+    background-color: whitesmoke;
+    color: #fff;
+  }
+  
+  .is-active:hover {
+    background-color: whitesmoke;
+    color: #fff;
+  }
+  
+  .is-active:focus {
+    background-color: whitesmoke;
+    color: #fff;
+  }
+  
+  .logo {
+    margin-right: 10px;
+    font-size: 18px;
+    width: 100%;
+    font-weight: bolder;
+    text-align: center;
+  
+  }
+
+  .toolbar-icon {
+    padding: 0 0px;
+  }
+  
+  .sidenavContainer {
+    height: 100%;
+  }
+  
+  
+  .top-nav {
+    height: 64px;
+    position: fixed;
+    top: 0px;
+  }
+  
+  .fixed-toolbar {
+    position: sticky;
+    z-index: 5;
+    top: 0;
+    width: 100%;
+  }
+
+  .inner-content{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .nav-link {
+    cursor: pointer;
+  }
+  
+  .active {
+    font-weight: bold;
+    background-color: whitesmoke;
+    color: darkred;
+  }
+  
+  .active:active {
+    font-weight: bold;
+    background-color: whitesmoke;
+  }
+  
+  .active-icon {
+    color: red;
+  }

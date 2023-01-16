@@ -1,0 +1,25 @@
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+
+import { WebHookSignalComponent } from './web-hook-signal.component';
+
+describe('WebHookSignalComponent', () => {
+  let component: WebHookSignalComponent;
+  let fixture: ComponentFixture<WebHookSignalComponent>;
+
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [ WebHookSignalComponent ]
+    })
+    .compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(WebHookSignalComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

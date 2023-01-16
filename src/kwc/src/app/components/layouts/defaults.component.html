@@ -1,0 +1,41 @@
+<mat-toolbar class='mat-toolbar'>
+  <mat-toolbar-row class='mat-toolbar-row; item'>
+    <div class='item'>
+      <div class='sub-item'>
+        <div>
+          <button mat-icon-button (click)="drawer.toggle();">
+            <mat-icon routerLinkActive="active-icon">menu</mat-icon>
+          </button>
+        </div>
+        <div class='sub-item'>
+          <app-header></app-header>
+        </div>
+      </div>
+    </div>
+    <div class='item'>
+      <div class='sub-item'>
+        <p class='text-discamer'>
+          This project has received funding from the European Union’s<br>
+          Horizon 2020 research and innovation programme<br>
+          under grant agreement No 871473
+        </p>
+      </div>
+      <div class='sub-item'>
+        <button mat-button disabled>
+          <img src="../../../../../assets/kraken-eu.png" />
+        </button>
+      </div>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" [attr.role]="(false ) ? 'dialog' : 'navigation'" [mode]="false ? 'over' : 'side'"
+    [opened]="isMenuOpen">
+    <app-sidebar></app-sidebar>
+  </mat-sidenav>
+
+  <mat-sidenav-content class='sidenav-content'>
+    <router-outlet #outlet="outlet"></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

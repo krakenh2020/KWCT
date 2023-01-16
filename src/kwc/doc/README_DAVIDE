@@ -1,0 +1,23 @@
+
+ng serve --disable-host-check
+
+
+#per pwa: 
+buildare con ng build --prod ( in debug i service workers non vanno )
+
+ATTENZIONE: 
+ng serve non funziona con i service workers
+
+usare http-server
+    1) va installato con npm: npm install --global http-server
+    2) andare in dist\kraken-angular-aries-controller e lanciare http-server
+
+
+lanciare ngrok http 8080 per accedere in https (altrimenti gira sito normale)
+
+
+lanciare express
+
+lanciare app:
+
+ng serve --host 0.0.0.0 --disable-host-check --port=4201

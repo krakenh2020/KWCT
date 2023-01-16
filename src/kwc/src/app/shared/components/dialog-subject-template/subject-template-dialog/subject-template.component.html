@@ -1,0 +1,13 @@
+<h2>Select Credential Template</h2>
+<mat-form-field appearance="">
+  <mat-select (selectionChange)="onChange($event)">
+    <mat-option *ngFor="let template of templates" [value]="template.url">{{template.ID}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-dialog-content>
+  <sf-form  [schema]="credentialSubjectSchema.credentialSubject" [model]="credentialSubjectModel" [actions]="actions">
+  </sf-form>
+</mat-dialog-content>
+<mat-dialog-actions>
+</mat-dialog-actions>

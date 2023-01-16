@@ -1,0 +1,30 @@
+    <div class="row">
+        <div class="column"></div>
+        <div class="column">
+            <form novalidate autocomplete="off" [formGroup]="form">
+                <div>
+                    <h2 class="text">Accept connection invitation</h2>
+                    <input type="text" class="form-control" id="connectionLabel" [formControl]="invitationLabel">
+                    <div *ngIf="invitationLabel.invalid" class="invalid-feedback d-block">
+                        <div *ngIf="invitationLabel.errors.required">new connection name (mandatory)</div>
+                    </div>
+                    <h3 class="text">Paste invitation:</h3>
+                    <textarea class="form-control"
+                        [ngClass]="{'is-invalid': (invitation.touched || invitation.dirty) && invitation.invalid}"
+                        id="invitationObject" cols="70" rows="10" [formControl]="invitation"></textarea>
+                    <div *ngIf="(invitation.touched || invitation.dirty) && invitation.invalid"
+                        class="invalid-feedback d-block">
+                        <div *ngIf="invitation.errors.required">Invitation object is required</div>
+                        <div *ngIf="invitation.errors.json">Invalid object: {{ invitation.errors.json }}</div>
+                    </div>
+                </div>
+
+                <button id="submitAC" type="button" class="btn btn-primary btn-lg btn-block" (click)="onSubmit()"
+                    [disabled]="form.invalid">Accept
+                    Invitation
+                </button>
+            </form>
+        </div>
+        <div class="column"></div>
+
+    </div>

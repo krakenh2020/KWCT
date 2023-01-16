@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="h3 webHook">
+    Received {{webhooks.length}} webHooks from Aries agent: hit F5 to keep interface aligned with the agent
+  </div>
+
+  <div>
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+    </mat-form-field>
+    <mat-table [dataSource]="dataSource" matSort>
+
+      <ng-container matColumnDef="rowNum">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> No. </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.rowNum}} </mat-cell>
+      </ng-container>
+
+      <!-- WebHookType Column -->
+      <ng-container matColumnDef="webHookType">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> WebHookType </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.webHookType}} </mat-cell>
+      </ng-container>
+
+      <!-- RequestBody -->
+      <ng-container matColumnDef="requestBodyId">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> RequestBody ID </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.requestBody.id}} </mat-cell>
+      </ng-container>
+
+      <!-- Topic -->
+      <ng-container matColumnDef="topic">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Topic </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.requestBody.topic}} </mat-cell>
+      </ng-container>
+
+      <!-- Message -->
+      <ng-container matColumnDef="message">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Message </mat-header-cell>
+        <mat-cell *matCellDef="let row"><button mat-button>Edit</button></mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="openModal(row.requestBody.message)">
+      </mat-row>
+
+    </mat-table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of periodic elements">
+    </mat-paginator>
+  </div>
+</div>

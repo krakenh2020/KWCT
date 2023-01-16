@@ -1,0 +1,9 @@
+<div class="content">
+  <div fxLayout="row wrap" fxLayoutGap="8px grid">
+    <verifiable-presentation-card [fxFlex]="(100/2) + '%'" fxFlex.xs="100%" fxFlex.sm="33%"
+      *ngFor="let presentation of presentations" [verifiedPresentation]="presentation">
+    </verifiable-presentation-card>
+  </div>
+</div>
+
+<app-empty-list *ngIf="!presentations?.length"></app-empty-list>

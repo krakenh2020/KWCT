@@ -1,0 +1,15 @@
+<mat-nav-list >
+    <a class="menuIcon"  [routerLink]="['/']" mat-list-item href="#" routerLinkActive="active"  (click)="this.setActiveItem('home')"><mat-icon routerLinkActive="active-icon">home</mat-icon><span class="ml-2" > Home </span></a>
+    <mat-divider></mat-divider>
+    <a class="menuIcon" [routerLink]="['/connections']" mat-list-item href="#" routerLinkActive="active" 
+        (click)="this.setActiveItem('connection')"><mat-icon routerLinkActive="active-icon">info</mat-icon><div [ngClass]="{'choosedItem' : this.isActive('connection')}"> Connections </div></a>
+    <a class="menuIcon" [routerLink]="['/credentials']" mat-list-item href="#" routerLinkActive="active"
+        (click)="this.setActiveItem('credential')"> <mat-icon routerLinkActive="active-icon">info</mat-icon><div  [ngClass]="{'choosedItem' : this.isActive('credential')}" > Credentials</div></a>
+    <a class="menuIcon" [routerLink]="['/present_proof']" mat-list-item href="#" routerLinkActive="active"
+    (click)="this.setActiveItem('presentation')" ><mat-icon routerLinkActive="active-icon">info</mat-icon><div  [ngClass]="{'choosedItem' : this.isActive('presentation')}" > Presentations</div></a>
+    <a class="menuIcon" [routerLink]="['/web-hook']" mat-list-item href="#" routerLinkActive="active" (click)="this.setActiveItem('webhook')"><mat-icon routerLinkActive="active-icon">info</mat-icon><span> WebHooks</span></a>
+    <mat-divider></mat-divider>
+    <a class="menuIcon" [routerLink]="" mat-list-item href="#" routerLinkActive="active" (click)="this.setActiveItem('help')"><mat-icon routerLinkActive="active-icon">help</mat-icon><div > Help </div></a>
+</mat-nav-list>
+
+

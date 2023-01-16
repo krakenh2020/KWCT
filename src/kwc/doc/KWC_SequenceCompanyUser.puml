@@ -1,0 +1,29 @@
+@startuml sequence
+
+autonumber
+
+actor CompanyUser
+activate KWCAngularApp
+activate KWCBackendProxy
+CompanyUser --> KWCAngularApp: register
+KWCAngularApp --> KWCBackendProxy: Post api/auth/signup
+KWCBackendProxy --> KWCBackendProxy: Check existing(save user to database)
+KWCBackendProxy --> KWCAngularApp: Return message("Registered successfully")
+deactivate KWCAngularApp
+deactivate KWCBackendProxy
+
+CompanyUser --> KWCAngularApp: login
+activate KWCAngularApp
+activate KWCBackendProxy
+KWCAngularApp --> KWCBackendProxy: Post api/auth/sign
+KWCBackendProxy --> KWCBackendProxy: Authenticate{username,password} \n & create jwt string with a secret
+KWCBackendProxy --> KWCAngularApp: Return JWT{token,type,user info,authorities}
+
+
+KWCAngularApp --> KWCBackendProxy: Request data with JWT on Authorization header
+
+KWCBackendProxy --> KWCBackendProxy: Check JWT signature - Get user info & authenticate \n - Authorize using user's authorities                                    
+KWCBackendProxy --> KWCAngularApp: Return response based on Authorities
+
+
+@enduml

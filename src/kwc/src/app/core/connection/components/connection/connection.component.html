@@ -1,0 +1,16 @@
+<div fxLayout fxLayoutAlign="center">
+	<ul fxLayout fxLayoutGap="50px" class="navigation-items">
+		<li><a routerLink="completed" routerLinkActive="completed"
+            [routerLinkActiveOptions]="{ exact: true }">My Connections</a></li>
+		<li><a routerLink="new" routerLinkActive="active" 
+            [routerLinkActiveOptions]="{ exact: true }">Show invitation</a></li>
+		<li><a routerLink="accept" routerLinkActive="active" 
+            [routerLinkActiveOptions]="{ exact: true }">Accept invitation</a></li>
+		<li><a routerLink="invited" routerLinkActive="invited" 
+            [routerLinkActiveOptions]="{ exact: true }">Invited</a></li>
+		<li><a routerLink="requested" routerLinkActive="requested"
+            [routerLinkActiveOptions]="{ exact: true }">Requested</a></li>
+	</ul>
+</div>
+<mat-divider></mat-divider>
+<router-outlet></router-outlet>

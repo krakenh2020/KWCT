@@ -1,0 +1,14 @@
+Parameters:
+
+  Environment:
+    Description: An identifier for the environment. Use value already set in the config
+    Type: String
+
+Conditions:
+  Never: !Equals [ a, b ]
+
+Resources:
+
+  NullResource:
+    Type: Custom::Null
+    Condition: Never

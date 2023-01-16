@@ -1,0 +1,18 @@
+<div fxLayout="row" fxLayoutAlign="end center">
+    <div>
+        <img src="../../../../../assets/kraken.png" />
+    </div>
+    <span>{{title}}</span>
+
+    <div class="toolbar-spacer" fxLayout="row" fxLayoutAlign="end center">
+        <button mat-icon-button [matMenuTriggerFor]="auth">
+            <mat-icon>person_outline</mat-icon>
+        </button>
+        <mat-menu #auth="matMenu">
+            <button mat-menu-item (click)="logout()">
+                <mat-icon>exit_to_app</mat-icon>
+                <span>Sign out</span>
+            </button>
+        </mat-menu>
+    </div>
+</div>

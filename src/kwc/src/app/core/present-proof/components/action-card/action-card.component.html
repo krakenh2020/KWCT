@@ -1,0 +1,49 @@
+<mat-card>
+  <mat-card-header>
+    <div mat-card-avatar class="header-image header-action-credential-image"></div>
+    <mat-card-title>{{this.router.url.split('/')[2]}}</mat-card-title>
+    <mat-card-subtitle>{{comment}}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+
+    <span class="did">MyDID : {{presentations.MyDID}}</span><br>
+    <span class="did">TheirDID : {{presentations.TheirDID}}</span><br>
+    <span class="did">PIID : {{presentations.PIID}}</span><br>
+
+    <div *ngIf="this.router.url === '/present_proof/accept-presentation-request'">
+      <br>
+      <mat-form-field>
+        <mat-label> please, paste here the credentialID</mat-label>
+        <input class="input" matInput placeholder="write here" [(ngModel)]="credentialId" appearance="fill">
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label> please, check or change your did</mat-label>
+        <input class="input" matInput placeholder="write here" [(ngModel)]="myDid" appearance="fill">
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label> please, check or change the signature type</mat-label>
+        <input class="input" matInput placeholder="write here" [(ngModel)]="signatureType" appearance="fill">
+      </mat-form-field>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <div *ngIf="this.router.url === '/present_proof/accept-presentation-request'">
+      <button mat-button class="btn" (click)="acceptPresentationRequest(presentations)"
+        [disabled]="credentialId === '' || myDid === '' || signatureType === ''">
+        Send Presentation
+      </button>
+      <button mat-button class="btn" [disabled]="true">
+        Remove
+      </button>
+    </div>
+    <div *ngIf="this.router.url === '/present_proof/accept-presentation'">
+      <button mat-button class="btn" (click)="acceptPresentation(presentations)">Save</button>
+      <button mat-button class="btn" [disabled]="true">
+        Delete
+      </button>
+    </div>
+  </mat-card-actions>
+</mat-card>

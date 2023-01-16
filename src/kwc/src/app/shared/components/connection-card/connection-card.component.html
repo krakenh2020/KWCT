@@ -1,0 +1,85 @@
+<mat-card [ngClass]="connection?.ServiceEndPoint !== '' ? 'connection-card' : 'inner-connection-card'">
+  <mat-card-header>
+    <div *ngIf="connection?.ServiceEndPoint !== ''" mat-card-avatar class="header-image header-known-image"></div>
+    <div *ngIf="connection?.ServiceEndPoint === ''" mat-card-avatar class="header-image header-un-known-image"></div>
+    <mat-card-title [ngClass]="connection?.ServiceEndPoint !== '' ? 'connection-title' : 'inner-connection-title' "> {{
+      connection?.ServiceEndPoint !== '' ? connection?.TheirLabel: 'incoming connection' }}</mat-card-title>
+    <mat-card-subtitle></mat-card-subtitle>
+  </mat-card-header>
+  
+  <mat-card-content>
+    <span class="did" >MyDID    : {{connection?.MyDID}}</span> 
+    <span class="did">TheirDID : {{connection?.TheirDID}}</span>
+    <span class="did" *ngIf="connection?.ServiceEndPoint !== ''">EndPoint :{{connection?.ServiceEndPoint}}<br>
+    </span>
+
+    <div *ngIf="!isConnectionTab">
+      
+      <br> <mat-label *ngIf="this.KwctRuntimeComment === '' ">please, describe the action</mat-label> <br>
+      <textarea matInput appearance="outline" [(ngModel)]='this.KwctRuntimeComment' name="KwctRuntimeComment" 
+        placeholder="here the action description" class="inputOTP"> </textarea><br>
+    </div>
+
+ <!--isConnection = {{ isConnectionTab}}
+    isSendOffer = {{ isSendOfferTab}}
+    isPresentProof = {{ isPresentProofTab}} -->
+
+    <div *ngIf="isSendOfferTab">
+      <br>
+      <mat-label *ngIf="this.KwctChoosedSchemaID === '' ">please, Choose a credential schema</mat-label>
+
+      <br>
+      <mat-select (selectionChange)="schemaChanged($event)">
+        <mat-option *ngFor="let schema of credentialSchemaList" [value]="schema">
+          {{ schema.ID }}
+        </mat-option>
+      </mat-select>
+
+
+      <button mat-button class="btn" (click)="sendOffer(connection, this.KwctChoosedSchemaID, this.KwctChoosedSchemaURL, this.KwctRuntimeComment )"
+        [disabled]="this.KwctChoosedSchemaID === '' || this.KwctRuntimeComment=== '' ">
+        Send credential offer
+      </button>
+    </div>
+
+
+  </mat-card-content>
+  <mat-card-actions>
+    <ng-container class="container" [ngSwitch]="connection?.State">
+      <ng-container *ngSwitchCase="'completed'" [ngTemplateOutlet]="completed"></ng-container>
+      <ng-container *ngSwitchCase="'invited'" [ngTemplateOutlet]="invitation"></ng-container>
+      <ng-container *ngSwitchCase="'requested'" [ngTemplateOutlet]="requested"></ng-container>
+    </ng-container>
+  </mat-card-actions>
+</mat-card>
+
+
+<ng-template #completed>
+
+  <button mat-button class="btn" (click)="getDetail()">
+    Connection detail
+  </button>&nbsp;
+  <button mat-button class="btn" (click)="removeConnection(connection)">
+    Remove
+  </button>
+
+  <span *ngIf="isPresentProofTab">
+
+
+    <button mat-button class="btn" (click)="sendPresentationRequest(connection)">
+      Send presentation request
+    </button>
+  </span>
+</ng-template>
+
+<ng-template #invitation>
+  <button mat-button class="btn" (click)="acceptInvitation(connection)">
+    Accept invitation
+  </button>
+</ng-template>
+
+<ng-template #requested>
+  <button mat-button class="btn" (click)="acceptRequest(connection)">
+    Accept request
+  </button>
+</ng-template>

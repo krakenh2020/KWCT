@@ -1,0 +1,21 @@
+<div>
+        <p>qrcode-reader works! - before qr code</p>
+
+
+        {{ qrResult }}
+
+        <div class="qr-scan-area">
+
+                <zxing-scanner #scanner enable=true [(device)]="currentDevice" (scanSuccess)="onCodeResult($event)"
+                        (permissionResponse)="onHasPermission($event)"></zxing-scanner>
+                <div class="qr-area">
+                        <div class="area"></div>
+                </div>
+        </div>
+        <p>qrcode-reader works! - after qr code</p>
+
+        <button (click)="onSendInvitation()">Send invitation</button>
+        
+
+        
+</div>

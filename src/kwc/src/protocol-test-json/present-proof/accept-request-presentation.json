@@ -1,0 +1,26 @@
+{
+  "presentation": {
+    "presentations~attach": [
+      {
+        "lastmod_time": "0001-01-01T00:00:00Z",
+        "data": {
+          "json": {
+            "@context": [
+              "https://www.w3.org/2018/credentials/v1",
+              "https://www.w3.org/2018/credentials/examples/v1"
+            ],
+            "holder": "did:example:ebfeb1f712ebc6f1c276e12ec21",
+            "id": "urn:uuid:3978344f-8596-4c3a-a978-8fcaba3903c5",
+            "issuer": "urn:uuid:3978344f-8596-4c3a-a978-8fcaba3903c5",
+            "infocer-id": "paky",
+            "type": [
+              "VerifiablePresentation",
+              "CredentialManagerPresentation"
+            ],
+            "verifiableCredential": null
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+<div class="container card" fxLayout fxLayoutAlign="left" fxLayoutGap="8px">
+     <connection-card class="card" *ngFor="let connection of connections"
+      [connection]="connection" (remove)="onRemoveConnection($event)">
+    </connection-card>
+  </div>
+
+<app-empty-list *ngIf="!connections?.length"></app-empty-list>

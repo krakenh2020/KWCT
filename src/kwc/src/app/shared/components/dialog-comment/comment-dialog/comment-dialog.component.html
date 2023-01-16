@@ -1,0 +1,11 @@
+<h2 mat-dialog-title>{{title}}</h2>
+<mat-dialog-content [formGroup]="form">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Leave a comment</mat-label>
+    <input matInput formControlName="comment">
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close class="btn btn-secondary">Cancel</button>
+  <button class="mat-raised-button"(click)="save()">Save</button>
+</mat-dialog-actions>

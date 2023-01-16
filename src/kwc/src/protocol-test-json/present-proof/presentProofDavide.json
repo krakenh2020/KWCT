@@ -1,0 +1,35 @@
+{
+    "presentation": {
+      "presentations~attach": [
+        {
+          "data": {
+            "json": {
+                "@context": [
+                  "https://www.w3.org/2018/credentials/v1",
+                  "https://www.w3.org/2018/credentials/examples/v1"
+                ],
+                "credentialSubject": {
+                  "degreeName": "sono io",
+                  "degreeType": "porro",
+                  "id": "davide"
+                },
+                "id": "http://example.edu/credentials/8be33",
+                "issuanceDate": "2022-02-26T13:55:35.124Z",
+                "issuer": "did:peer:1zQmevxZWPjdyBWPhcZkbSZ7HMrMAZ87m6R8nSdcw7tAdQht",
+                "proof": {
+                  "created": "2022-02-26T13:55:35.124Z",
+                  "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..trvZUFScAPSOJPC-tIeIrBCmrH-mFpEQTjYMR3_Z5yfztT8CplFBcLilXDoYEMbrp8MaRkqIgrkJyLO5izUPBA",
+                  "proofPurpose": "assertionMethod",
+                  "type": "Ed25519Signature2018",
+                  "verificationMethod": "did:peer:1zQmevxZWPjdyBWPhcZkbSZ7HMrMAZ87m6R8nSdcw7tAdQht#vgGx2Nt5JIgjOOUZV094QfpBhayp7ekaAEVFFD72Z84"
+                },
+                "type": [
+                  "VerifiableCredential",
+                  "UniversityDegreeCredential"
+                ]
+              }
+          }
+        }
+      ]
+    }
+  }

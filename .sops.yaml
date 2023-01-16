@@ -1,0 +1,11 @@
+# creation rules are evaluated sequentially, the first match wins
+creation_rules:
+  # every file that matches the pattern *.svts.yaml
+  - path_regex: \.svts\.yaml$
+    kms: 'SVTS_ARN'
+  # every file that matches the pattern *.cl.yaml
+  - path_regex: \.cl\.yaml$
+    kms: 'CL_ARN'
+  # every file that matches the pattern *.pr.yaml
+  - path_regex: \.pr\.yaml$
+    kms: 'PR_ARN'

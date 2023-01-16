@@ -1,0 +1,10 @@
+release_version: "0.1"
+build:
+  custom_image: false
+  custom_image_version: "0.1"
+pre_deploy:
+  custom_image: false
+  custom_image_version: "0.1"
+post_deploy:
+  custom_image: false
+  custom_image_version: "0.1"

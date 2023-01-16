@@ -1,0 +1,14 @@
+<div fxLayout fxLayoutAlign="center">
+    <ul fxLayout fxLayoutGap="40px" class="navigation-items">
+        <li><a class="nav-item nav-link" routerLink="presentations" routerLinkActive="presentations"
+            [routerLinkActiveOptions]="{ exact: true }">My Presentations</a></li>  
+        <li><a class="nav-item nav-link" routerLink="send-presentation" routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }">Request</a></li>
+        <li><a class="nav-item nav-link" routerLink="accept-presentation-request" routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }">Accept Requests</a></li>
+        <li><a class="nav-item nav-link" routerLink="accept-presentation" routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }">Save Presentations</a></li>
+    </ul>
+</div>
+<mat-divider></mat-divider> 
+<router-outlet></router-outlet>

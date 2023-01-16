@@ -1,0 +1,13 @@
+{
+    "configurations": {
+        "TITLE": "KWCT Server Agent",        
+        "BACKEND_HOST_NAME": "http://localhost",
+        "BACKEND_PORT": "6080",
+        "SOCKET_IOCLIENT_BASE_URL" : "localhost",    
+        "SOCKET_IO_PORT": "6084",
+        "KEYCLOAK_URL": "http://keycloak:8080",
+        "KEYCLOAK_REALM": "kraken",
+        "KEYCLOAK_CLIENT_ID": "kwct-frontend",
+        "VC_SCHEMA_INDEX_FILE_URL": "https://raw.githubusercontent.com/krakenh2020/vc-schemas/main/VCSchemaIndex.json"
+    }
+}

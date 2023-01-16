@@ -1,0 +1,13 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  {{ if .Values.metadata.labels.branch }}
+  name: configmap-{{ .Values.metadata.labels.component }}-{{ .Values.metadata.labels.branch }}
+  {{ else }}
+  name: configmap-{{ .Values.metadata.labels.component }}
+  {{ end }}
+  labels:
+    {{- range $key, $val := .Values.metadata.labels }}
+    {{ $key }}: {{ $val }}
+    {{- end }}
+    additional: test
