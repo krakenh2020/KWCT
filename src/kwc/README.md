@@ -1,15 +1,15 @@
 # KWCT The Kraken Web Company Tool
-This web tool was developed by Infocert in the context of the EU2020 Kraken project to study, verify and test the evolutions of the W3C data model and of the open souce Hyperledger Aries framework implementations during the lifetime of the Kraken project ( nov 2019- jan 2023).
+This web tool was developed by Infocert in the context of the EU2020 Kraken project to study, verify and test the evolutions of the W3C data model and of the open souce Hyperledger Aries framework implementations during the lifetime of the Kraken project ( dec 2019- jan 2023).
 It was really useful to us because with 2 KWCT instances only it is possible to cover all the 3 SSI roles: Issuer, Holder and Verifier.
-This are the reasons we decided to provide it as an open source sw, we hope it will be as useful to you as it was for us.
+These are the reasons we decided to provide it as an open source sw, we hope it will be as useful to you as it was for us.
 
 ## Main Features of the tool
 * It is a Hyperledger Aries Controller, i.e an interface on an Hyperledger Aries Agent ( NB: the agent is not part of this project)
-* It has developed to works on a Hyperledger Aries Go-Rest-Agent instance, it's tested on v0.1.8 of the agent; the agent is provided by the Hyperledegr Aries community: https://github.com/hyperledger/aries-framework-go.
+* It was developed to work on a Hyperledger Aries Go-Rest-Agent instance, it's tested on v0.1.8 of the agent; the agent is provided by the Hyperledegr Aries community: https://github.com/hyperledger/aries-framework-go.
      * The tool supports DID-EXCHANGE, ISSUE-CREDENTIAL and PRESENT-PROOF Aries Protocols in the version implemented by the go rest Agent v01.8
 ] Web socket are used receive webhooks from the backend
 * The index/list of the defined VC schemas and the definitions of the VC used by KWCT to generate the input forms during the credential issuing, are inside the github repository : "https://github.com/krakenh2020/vc-schemas" - VC schemas are defined in https://json-schema.org/ format and "text" is the only field type supported by this release of the tool.
-* Credential issued by htis version are in W3C Json-LD format.
+* Credential issued by this version are in W3C Json-LD format.
 * The tool is designed for companies, so the DID used to issue the credentials is associated to a company and employees access is protected by openID connect sessions.
 It works out-of-the-box using OpenId Connect authentication services provided by an instance of KeyCloack: https://www.keycloak.org/ (NB: keyCloak is not part of this project)
      * if you plan to use a keycloak instance:
